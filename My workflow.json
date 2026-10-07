@@ -1,0 +1,75 @@
+{
+  "name": "My workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 8
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.4,
+      "position": [
+        368,
+        144
+      ],
+      "id": "074a48ad-64fc-4ea1-8459-408cef3305df",
+      "name": "Schedule Trigger1"
+    },
+    {
+      "parameters": {
+        "operation": "send",
+        "phoneNumberId": "1410078108848732",
+        "recipientPhoneNumber": "919578350092",
+        "textBody": "Hi Uma",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1.1,
+      "position": [
+        592,
+        144
+      ],
+      "id": "32564f79-ecda-4026-8c3b-2dbea4efc14d",
+      "name": "Send message1",
+      "webhookId": "4c6d5b9b-05f0-4a53-9c2a-3ff4360dea04",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "NOMI7JHL2hBYzS8g",
+          "name": "WhatsApp account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Schedule Trigger1": {
+      "main": [
+        [
+          {
+            "node": "Send message1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "403183fb-16c5-4710-b3f5-b6bc737867d8",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "9068628af0a57d7781e1d67599534562ddbd0287ef251100b06e4c635b52f2a2"
+  },
+  "nodeGroups": [],
+  "id": "ua6pVaS3WSQaTsrm",
+  "tags": []
+}
